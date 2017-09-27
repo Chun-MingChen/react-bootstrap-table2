@@ -6,6 +6,7 @@ import Cell from '../src/cell';
 import Row from '../src/row';
 import Const from '../src/const';
 import EditingCell from '../src/editing-cell';
+import mockBodyResolvedProps from '../test/mock-data/body-resolved-props';
 
 const defaultColumns = [{
   dataField: 'id',
@@ -30,7 +31,7 @@ describe('Row', () => {
   describe('simplest row', () => {
     beforeEach(() => {
       wrapper = shallow(
-        <Row rowIndex={ 1 } columns={ defaultColumns } row={ row } cellEdit={ {} } />);
+        <Row {...mockBodyResolvedProps} rowIndex={ 1 } columns={ defaultColumns } row={ row } />);
     });
 
     it('should render successfully', () => {
@@ -53,6 +54,7 @@ describe('Row', () => {
       };
       wrapper = shallow(
         <Row
+          {...mockBodyResolvedProps}
           row={ row }
           rowIndex={ rowIndex }
           columns={ columns }
@@ -92,6 +94,7 @@ describe('Row', () => {
         columns[nonEditableColIndex].editable = false;
         wrapper = shallow(
           <Row
+            {...mockBodyResolvedProps}
             row={ row }
             rowIndex={ rowIndex }
             columns={ columns }
@@ -120,6 +123,7 @@ describe('Row', () => {
       beforeEach(() => {
         wrapper = shallow(
           <Row
+            {...mockBodyResolvedProps}
             row={ row }
             rowIndex={ rowIndex }
             columns={ columns }
@@ -149,6 +153,7 @@ describe('Row', () => {
           cellEdit.onEscape = sinon.stub();
           wrapper = shallow(
             <Row
+              {...mockBodyResolvedProps}
               row={ row }
               rowIndex={ 1 }
               columns={ columns }
@@ -178,6 +183,7 @@ describe('Row', () => {
           cellEdit.onEscape = sinon.stub();
           wrapper = shallow(
             <Row
+              {...mockBodyResolvedProps}
               row={ row }
               rowIndex={ 1 }
               columns={ columns }
