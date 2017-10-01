@@ -203,7 +203,9 @@ BootstrapTable.propTypes = {
     nonEditableRows: PropTypes.func,
     timeToCloseMessage: PropTypes.number
   }),
-  selectRow: PropTypes.object
+  selectRow: PropTypes.shape({
+    mode: PropTypes.oneOf([Const.ROW_SELECT_SINGLE, Const.ROW_SELECT_MULTIPLE]).isRequired
+  })
 };
 
 BootstrapTable.defaultProps = {
