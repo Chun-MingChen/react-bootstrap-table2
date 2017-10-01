@@ -136,9 +136,11 @@ describe('BootstrapTable', () => {
         );
       });
 
-      it('state.selectedRowKeys should contain single key', () => {
+      it('state.selectedRowKeys should contain only single key', () => {
         wrapper.instance().handleRowSelect(rowKey);
+        expect(wrapper.state('selectedRowKeys')).toEqual([rowKey]);
 
+        wrapper.instance().handleRowSelect(rowKey);
         expect(wrapper.state('selectedRowKeys')).toEqual([rowKey]);
       });
     });
@@ -196,7 +198,7 @@ describe('BootstrapTable', () => {
 
       describe('when one or more than one row was selected', () => {
         it('should unselect all rows', () => {
-          wrapper.setState({ selectedRowKeys: [...data] });
+          wrapper.setState({ selectedRowKeys: data.map(({ id }) => id) });
 
           wrapper.instance().handleAllRowsSelect();
 
@@ -216,7 +218,7 @@ describe('BootstrapTable', () => {
 
       describe('when option is falsy', () => {
         it('should unselect all rows', () => {
-          wrapper.setState({ selectedRowKeys: [...data] });
+          wrapper.setState({ selectedRowKeys: data.map(({ id }) => id) });
 
           wrapper.instance().handleAllRowsSelect(false);
 
