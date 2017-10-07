@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import SelectionCell from '../../src/row-selection/selection-cell';
+import SelectionCell from 'row-selection/selection-cell';
 
 describe('<SelectionCell />', () => {
   const mode = 'checkbox';

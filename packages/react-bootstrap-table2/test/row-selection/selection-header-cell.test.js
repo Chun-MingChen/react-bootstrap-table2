@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Constant from '../../src/const';
 
-import SelectionHeaderCell, { CheckBox } from '../../src/row-selection/selection-header-cell';
+import Constant from 'const';
+import SelectionHeaderCell, { CheckBox } from 'row-selection/selection-header-cell';
 
 let wrapper;
 

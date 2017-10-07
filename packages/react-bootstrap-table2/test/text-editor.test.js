@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import TextEditor from '../src/text-editor';
+import TextEditor from 'text-editor';
 
 describe('TextEditor', () => {
   let wrapper;

@@ -2,10 +2,10 @@ import React from 'react';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 
-import Header from '../src/header';
-import Body from '../src/body';
-import BootstrapTable from '../src/bootstrap-table';
-import Const from '../src/const';
+import BootstrapTable from 'bootstrap-table';
+import Header from 'header';
+import Body from 'body';
+import Const from 'const';
 
 describe('BootstrapTable', () => {
   let wrapper;

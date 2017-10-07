@@ -1,7 +1,7 @@
 import sinon from 'sinon';
 
-import { sort } from '../../src/store/sort';
-import Const from '../../src/const';
+import { sort } from 'store/sort';
+import Const from 'const';
 
 describe('Sort Function', () => {
   const data = [

@@ -1,6 +1,6 @@
-import Base from '../../src/store/base';
-import Const from '../../src/const';
-import _ from '../../src/utils';
+import Base from 'store/base';
+import Const from 'const';
+import _ from 'utils';
 
 describe('Store Base', () => {
   let store;
