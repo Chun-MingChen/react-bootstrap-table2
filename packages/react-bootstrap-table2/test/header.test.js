@@ -5,8 +5,9 @@ import HeaderCell from 'header-cell';
 import SelectionHeaderCell from 'row-selection/selection-header-cell';
 import Header from 'header';
 import Const from 'const';
+import { headerResolvedProps } from 'test/factory';
 
-import mockHeaderResolvedProps from 'test/mock-data/header-resolved-props';
+const mockHeaderResolvedProps = headerResolvedProps();
 
 describe('Header', () => {
   let wrapper;
