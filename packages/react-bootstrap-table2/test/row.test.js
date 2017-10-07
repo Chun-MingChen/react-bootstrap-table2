@@ -204,7 +204,7 @@ describe('Row', () => {
     });
   });
 
-  describe('when the selectRow.mode was not selectable', () => {
+  describe('when selectRow.mode is ROW_SELECT_DISABLED (row was un-selectable)', () => {
     beforeEach(() => {
       wrapper = shallow(
         <Row {...mockBodyResolvedProps} rowIndex={ 1 } columns={ defaultColumns } row={ row } />);
@@ -215,7 +215,7 @@ describe('Row', () => {
     });
   });
 
-  describe('when the selectRow.mode was selectable', () => {
+  describe('when selectRow.mode is checkbox or radio (row was selectable)', () => {
     beforeEach(() => {
       const selectRow = { mode: 'checkbox' };
       wrapper = shallow(
