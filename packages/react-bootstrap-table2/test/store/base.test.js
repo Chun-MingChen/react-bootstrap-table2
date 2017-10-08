@@ -1,6 +1,9 @@
 import Base from 'store/base';
 import Const from 'const';
 import _ from 'utils';
+import { baseKeyField } from 'test/factory';
+
+const keyField = baseKeyField();
 
 describe('Store Base', () => {
   let store;
@@ -13,7 +16,7 @@ describe('Store Base', () => {
       { id: 4, name: '123tester' },
       { id: 1, name: '!@#' }
     ];
-    store = new Base({ data, keyField: 'id' });
+    store = new Base({ data, keyField });
   });
 
   describe('initialize', () => {

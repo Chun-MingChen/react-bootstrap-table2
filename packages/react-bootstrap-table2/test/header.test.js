@@ -5,19 +5,13 @@ import HeaderCell from 'header-cell';
 import SelectionHeaderCell from 'row-selection/selection-header-cell';
 import Header from 'header';
 import Const from 'const';
-import { headerResolvedProps } from 'test/factory';
+import { headerResolvedProps, baseColumns } from 'test/factory';
 
 const mockHeaderResolvedProps = headerResolvedProps();
 
 describe('Header', () => {
   let wrapper;
-  const columns = [{
-    dataField: 'id',
-    text: 'ID'
-  }, {
-    dataField: 'name',
-    text: 'Name'
-  }];
+  const columns = baseColumns();
 
   describe('simplest header', () => {
     beforeEach(() => {
