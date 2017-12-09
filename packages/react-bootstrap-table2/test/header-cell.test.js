@@ -437,7 +437,7 @@ describe('HeaderCell', () => {
         });
       });
 
-      describe('when headerSortingClasses was defined ', () => {
+      describe('when headerSortingClasses is defined ', () => {
         const classes = 'foo';
         const order = Const.SORT_DESC;
 
@@ -516,7 +516,7 @@ describe('HeaderCell', () => {
           });
         });
 
-        describe('if column.headerClasses was defined as well', () => {
+        describe('if column.headerClasses is defined as well', () => {
           it('should keep both classes', () => {
             column = {
               ...column,
@@ -541,7 +541,7 @@ describe('HeaderCell', () => {
         });
       });
 
-      describe('when headerSortingStyle was defined', () => {
+      describe('when headerSortingStyle is defined', () => {
         const style = { backgroundColor: 'red' };
         const order = Const.SORT_DESC;
 
