@@ -36,6 +36,16 @@ class NumberFilter extends Component {
     if (comparator && number) {
       onFilter(column, FILTER_TYPE.NUMBER)({ number, comparator });
     }
+
+    // allow users to get filter function
+    if (this.props.getFilterBy) {
+      this.props.getFilterBy(
+        (filterVal) => {
+          this.setState(() => ({ isSelected: (value !== '') }));
+          this.props.onFilter(this.props.column, FILTER_TYPE.TEXT)(filterVal);
+        }
+      );
+    }
   }
 
   componentWillUnmount() {
