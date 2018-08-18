@@ -26,12 +26,6 @@ const aliasPath = {
 };
 
 const loaders = [{
-  enforce: 'pre',
-  test: /\.js?$/,
-  exclude: /node_modules/,
-  include: [examplesPath, storyPath],
-  loader: 'eslint-loader',
-}, {
   test: /\.js?$/,
   use: ['babel-loader'],
   exclude: /node_modules/

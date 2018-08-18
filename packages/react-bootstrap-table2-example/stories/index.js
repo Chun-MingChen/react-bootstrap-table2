@@ -1,6 +1,7 @@
 /* eslint import/no-unresolved: 0 */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf, addDecorator, addParameters } from '@storybook/react';
+import WithBootstrapStyle, { bootstrapStyle } from './utils'
 
 // welcome
 import Welcome from 'examples/welcome';
@@ -125,21 +126,23 @@ import RemoteCellEdit from 'examples/remote/remote-celledit';
 import RemoteAll from 'examples/remote/remote-all';
 
 // css style
-import 'bootstrap/dist/css/bootstrap.min.css';
 import 'stories/stylesheet/tomorrow.min.css';
 import 'stories/stylesheet/storybook.scss';
 import '../../react-bootstrap-table2/style/react-bootstrap-table2.scss';
 import '../../react-bootstrap-table2-paginator/style/react-bootstrap-table2-paginator.scss';
 import '../../react-bootstrap-table2-filter/style/react-bootstrap-table2-filter.scss';
 
-// import { action } from '@storybook/addon-actions';
-
-// action('hello');
 storiesOf('Welcome', module)
   .add('react bootstrap table 2 ', () => <Welcome />);
 
 storiesOf('Basic Table', module)
-  .add('basic table', () => <BasicTable />)
+  .addDecorator(bootstrapStyle())
+  .add('basic table', (config, ...rest) => {
+    console.log(config)
+    return <BasicTable />
+  }, {
+    foo: 'bar'
+  })
   .add('striped, hover, condensed table', () => <StripHoverCondensedTable />)
   .add('borderless table', () => <BorderlessTable />)
   .add('Indication For Empty Table', () => <NoDataTable />)
@@ -147,6 +150,7 @@ storiesOf('Basic Table', module)
   .add('Table with caption', () => <CaptionTable />);
 
 storiesOf('Work on Columns', module)
+  .addDecorator(bootstrapStyle('3.3.7'))
   .add('Display Nested Data', () => <NestedDataTable />)
   .add('Column Formatter', () => <ColumnFormatTable />)
   .add('Column Formatter with Custom Data', () => <ColumnFormatExtraDataTable />)

@@ -1,5 +1,6 @@
 import React from 'react';
 import Typed from 'typed.js';
+import path from 'path';
 
 export default class Welcome extends React.Component {
   componentDidMount() {
