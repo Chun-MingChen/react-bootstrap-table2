@@ -63,7 +63,7 @@ export default class SelectionCell extends Component {
       <BootstrapContext.Consumer>
         {
           ({ bootstrap4 }) => (
-            <td onClick={ this.handleClick }>
+            <td data-row-selection onClick={ this.handleClick }>
               {
                 selectionRenderer ? selectionRenderer({
                   mode: inputType,

@@ -62,7 +62,14 @@ export default class extends React.PureComponent {
   render() {
     return (
       <div>
-        <BootstrapTable bootstrap4 keyField="id" data={ products } columns={ columns } defaultSorted={ defaultSorted } />
+        <BootstrapTable
+          bootstrap4
+          wrapperClasses="table-responsive"
+          keyField="id"
+          data={ products }
+          columns={ columns }
+          defaultSorted={ defaultSorted }
+        />
         <Code>{ sourceCode }</Code>
       </div>
     );

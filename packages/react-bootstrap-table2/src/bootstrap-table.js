@@ -56,7 +56,8 @@ class BootstrapTable extends PropsBaseResolver(Component) {
       rowClasses,
       wrapperClasses,
       rowEvents,
-      selected
+      selected,
+      sticky
     } = this.props;
 
     const tableWrapperClass = cs('react-bootstrap-table', wrapperClasses);
@@ -65,7 +66,8 @@ class BootstrapTable extends PropsBaseResolver(Component) {
       'table-striped': striped,
       'table-hover': hover,
       'table-bordered': bordered,
-      'table-condensed': condensed
+      'table-condensed': condensed,
+      'table-sticky': sticky
     }, classes);
 
     const cellSelectionInfo = this.resolveSelectRowProps({
